@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Tutor</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>PDF Tutor</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" required>
+        <button type="submit">Upload PDF</button>
+    </form>
+
+    <div id="tutor-content" style="display:none;">
+        <h2>Tutor Mode</h2>
+        <div id="tutor-response"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#upload-form').on('submit', function(event) {
+                event.preventDefault();
+                
+                var formData = new FormData();
+                formData.append('file', $('#file')[0].files[0]);
+
+                $.ajax({
+                    url: '/upload',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        if (response.file_path) {
+                            $.ajax({
+                                url: '/tutor',
+                                type: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({ file_path: response.file_path }),
+                                success: function(tutorResponse) {
+                                    $('#tutor-response').html(tutorResponse.tutor_response);
+                                    $('#tutor-content').show();
+                                }
+                            });
+                        } else {
+                            alert(response.error);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
