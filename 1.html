@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>knowlEDGE Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check if the 'loggedIn' flag is set in localStorage
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                // If not, redirect to login.html
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="1.html" class="logo">knowlEDGE</a>
+        <div class="nav-items">
+            <div class="nav-item" onclick="window.location.href='3.html'">Summarizer</div>
+            <div class="nav-item" onclick="window.location.href='4.html'">Tutor</div>
+            <div class="nav-item" onclick="window.location.href='5.html'">HomeWork Bot</div>
+            <div class="profile-circle" onclick="window.location.href='8.html'"></div>
+        </div>
+    </nav>
+    
+    <div class="button-container">
+        <h2>Welcome to knowlEDGE</h2>
+        <div class="buttons">
+            <h4>Choose any one option to start acing your subjects</h4>
+            <div class="button-group">
+                <button class="redirect-button" onclick="window.location.href='3.html'"><span>PDF</span></button>
+                <button class="redirect-button" onclick="window.location.href='3.html'"><span>Text</span></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="additional-content">
+        <h1>What would you like to do now?</h1>
+        <div class="container">
+            <a href="3.html" class="card">
+                <h3>Summarizer</h3>
+                <img src="Summarizer.png" alt="Summarizer">
+                <p>Get summaries of your text.</p>
+            </a>
+            <a href="4.html" class="card">
+                <h3>Tutor</h3>
+                <img src="Tutor.png" alt="Tutor">
+                <p>Learn with personalized tutoring.</p>
+            </a>
+            <a href="5.html" class="card">
+                <h3>HomeWork Bot</h3>
+                <img src="HomeWorkBot.jpeg" alt="HomeWork Bot">
+                <p>Get help with your homework.</p>
+            </a>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        &copy; 2024 Team CodeBlue
+    </footer>
+</body>
+</html>
