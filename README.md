@@ -1,5 +1,6 @@
 <h2><b>This project was a part of our participation in Falcon hackathon</b></h2>
 <h3>Note: This project is currently unmaintained, this repository exists only for portfolio purposes. The code no longer works, since the api key is obsolete</h3>
+<h4>Authors: Ojas Madineni, Prajwala Yadlapalli, Sri Vatsal Parise, Naidu Yashwanth Reddy</h4>
 knowlEDGE is a cutting edge AI project aimed at improvising the current education system, which lacks one on one interaction.<br>
 The project leverages the Falcon LLM's API for the interactive and personalised learning experience of the learners.<br>
 We introduced 3 primary functionalities.<br>
